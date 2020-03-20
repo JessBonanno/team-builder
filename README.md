@@ -16,14 +16,14 @@ In this project you'll build an app that will keep track of memebers of a team. 
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
-- [ ] CD into your `team-builder` directory
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [X] Create a forked copy of this project.
+- [] Add your team lead as collaborator on Github.
+- [X] Clone your OWN version of the repository in your terminal
+- [X] Use `npx create-react-app team-builder --use-npm` or `create-react-app team-builder` to initiate the project.
+- [X] CD into your `team-builder` directory
+- [X] Start up the app using `npm start`
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
@@ -40,11 +40,11 @@ Follow these steps for completing your project.
 
 ### STEP 1 - Setup your state
 
-- [ ] Import the `useState` hook and set up a state property for your team members list
+- [X] Import the `useState` hook and set up a state property for your team members list
 
-- [ ] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
+- [X] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
 
-- [ ] Render your list of team members
+- [X] Render your list of team members
 
 ### STEP 2 - Build your form
 
