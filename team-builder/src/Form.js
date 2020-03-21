@@ -20,6 +20,7 @@ const Form = () => {
   };
   return (
     <div>
+        <h1>Team Builder</h1>
       <form className="form" onSubmit={onFormSubmit}>
         <input
           placeholder="First Name"
