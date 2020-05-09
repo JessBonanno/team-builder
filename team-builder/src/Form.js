@@ -1,53 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Form = () => {
+const Form = ({ memberToEdit, editMember, addNewMember }) => {
+
   const [formValues, setFormValues] = useState({
     fname: "",
     lname: "",
     email: "",
-    role: ""
+    role: "",
   });
-  console.log(formValues);
-  const onValueChange = event => {
+  
+  useEffect(() => {
+    JSON.stringify(memberToEdit) !== '{}' && setFormValues(memberToEdit);
+  }, [memberToEdit])
+
+  
+  
+  const handleChanges = (e) => {
     setFormValues({
       ...formValues,
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value,
     });
   };
-  const onFormSubmit = event => {
-    event.preventDefault();
-    alert(`sumbitting all forms`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addNewMember({...formValues, id: Date.now()});
+    setFormValues({
+      fname: "",
+      lname: "",
+      email: "",
+      role: "",
+    });
   };
+
   return (
     <div>
-        <h1>Team Builder</h1>
-      <form className="form" onSubmit={onFormSubmit}>
+      <h1>Team Builder</h1>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           placeholder="First Name"
           name="fname"
           value={formValues.fname}
-          onChange={onValueChange}
+          onChange={handleChanges}
         />
         <input
           placeholder="Last Name"
           name="lname"
           value={formValues.lname}
-          onChange={onValueChange}
+          onChange={handleChanges}
         />
         <input
           placeholder="Email"
           name="email"
           value={formValues.email}
-          onChange={onValueChange}
+          onChange={handleChanges}
         />
         <input
           placeholder="Role"
           name="role"
           value={formValues.role}
-          onChange={onValueChange}
+          onChange={handleChanges}
         />
-        <input type="submit" />
       </form>
+      {JSON.stringify(memberToEdit) !== "{}" ? (
+        <button onClick={() => editMember(formValues, memberToEdit.id)}>Update</button>
+      ) : (
+        <button onClick={handleSubmit}>Submit</button>
+      )}
     </div>
   );
 };
